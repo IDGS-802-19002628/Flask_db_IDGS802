@@ -1,0 +1,35 @@
+{% extends 'layout2.html' %}
+{% block content %}
+{%from "_macros.html" import input_forms%}
+    <div class="container">
+        <div class="row">
+            <h1>Modificar</h1>
+            <form name="modificar" action="/modificar" id="modificar" method="POST" novalidate>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{input_forms(form.id, class="form-control")}}
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{input_forms(form.nombre, class="form-control")}}
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{input_forms(form.apaterno, class="form-control")}}
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{input_forms(form.email, class="form-control")}}
+                    </div>
+                </div>
+                <input type="hidden"  name="csrf_token" value="{{csrf_token()}}"/>
+                <input type="submit" id="modificar" name="modificar" value="modificar" class="btn btn-warning"/>
+                <a href="ABC_Completo" class="btn btn-success">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+   
